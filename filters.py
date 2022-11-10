@@ -10,7 +10,6 @@ class IsOwnerFilter(BoundFilter):
 
     def __init__(self, is_owner):
         self.is_owner = is_owner
-    
     async def check(self, message: types.Message):
         return message.from_user.id == config.BOT_OWNER
 
