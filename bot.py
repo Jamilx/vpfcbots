@@ -1,17 +1,16 @@
-from aiogram import Bot, types
-from aiogram.dispatcher import Dispatcher
-from aiogram.utils import executor
-from config import *
-import os
-
-bot = Bot(token = BOT_TOKEN)
-dp = Dispatcher(bot)
-
-
-@dp.message_handler()
-async def echo_send(message : types.Message):
-    await message.answer(message.text)
+from aiogram import executor
+from dispatcher import dp
+import handlers
 
 
 
-executor.start_polling(dp, skip_updates = True)
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    executor.start_polling(dp, skip_updates=True)
